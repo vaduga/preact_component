@@ -1,0 +1,19 @@
+$Color :  rgb(100, 187, 88);
+
+App {
+  font-family: sans-serif;
+  text-align: center;
+  display:flex;
+}
+
+.person { 
+    text-align: center;
+
+    background: $Color; /* Цвет фона */
+    width: 200px; /* Ширина блока */
+    padding: 5px; /* Поля */
+    margin-top: 10px; /* Отступ сверху */
+    border: 2px solid #000; /* Параметры рамки */
+    box-sizing: border-box; /* Ширина */
+
+    }
