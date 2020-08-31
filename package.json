@@ -1,7 +1,6 @@
 {
   "name": "t",
   "version": "1.0.0",
-  "main": "index.html",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.11.4",
@@ -14,11 +13,12 @@
     "sass": "^1.26.10"
   },
   "dependencies": {
+    "cross-env": "^7.0.2",
     "gh-pages": "^3.1.0"
   },
   "scripts": {
-    "start": "parcel serve ./src/index.html",
-    "build": "parcel build ./src/index.html",
+    "start": "parcel serve --no-cache ./src/index.html ",
+    "build": "parcel build --no-cache ./src/index.html --dist-dir=build --public-url ./",
     "deploy": "gh-pages -d build"
   },
   "alias": {

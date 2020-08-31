@@ -1,5 +1,5 @@
 // import { html, render, Component } from 'https://unpkg.com/htm/preact/index.mjs?module'
-//yarn deploy 
+//yarn build start build deploy 
 import { render, Component } from 'preact';
 
 import { html } from 'htm/react';
