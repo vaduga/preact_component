@@ -1,6 +1,7 @@
 // import { html, render, Component } from 'https://unpkg.com/htm/preact/index.mjs?module'
-//yarn build start build deploy 
+//yarn start build deploy 
 import { render, Component } from 'preact';
+import { useState } from 'preact/hooks' 
 
 import { html } from 'htm/react';
 
@@ -8,36 +9,38 @@ import Person from './components/person.js';
 
 console.log('Привет, Мир!!');
 
-class App extends Component {
-	state = {
+const App = () => {
+	let initState = {
 		persons: [ { id: 0, name: 'MaryxxxJ', age: 10, end: 2 }, { id: 1, name: 'Jane', age: 15, end: 5 } ]
 	};
 
-	increase = (name) => {
+	const [state, setState] = useState(initState)
+
+	const increase = (name) => {
 		console.log(name + ' minus');
 
-		this.setState((prevState) => ({
-			persons: prevState.persons.map((el) => (el.name === name ? { ...el, age: el.age + 1 } : el))
+		setState((state) => ({
+			persons: state.persons.map((el) => (el.name === name ? { ...el, age: el.age + 1 } : el))
 		}));
 	};
 
-	decrease = (name) => {
-		console.log(name + ' plus');
-		this.setState((prevState) => ({
-			persons: prevState.persons.map((el) => (el.name === name ? { ...el, age: el.age - 1 } : el))
+	const decrease = (name) => {
+		console.log(name + ' minus');
+
+		setState((state) => ({
+			persons: state.persons.map((el) => (el.name === name ? { ...el, age: el.age - 1 } : el))
 		}));
 	};
 
-	render() {
-		const f = () => console.log('clicker');
-		const list = this.state.persons.map(
+			const f = () => console.log('clicker');
+		const list = state.persons.map(
 			(person) => html`
 <${Person}
 				name=${person.name}
 				age=${person.age}
 				end=${person.end}
-				clickPlus=${() => this.increase(person.name)}
-				clickMinus=${() => this.decrease(person.name)}
+				clickPlus=${() => increase(person.name)}
+				clickMinus=${() => decrease(person.name)}
 			/>`
 		);
 
@@ -47,7 +50,7 @@ class App extends Component {
 			${list}
 		</div>
 	`;
-	}
+	
 }
 
 render(html`<${App}/>`, document.querySelector('#root'));
