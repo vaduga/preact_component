@@ -420,7 +420,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-console.log('Привет, Мир!');
+console.log('Привет, Мир!!');
 
 class App extends _preact.Component {
   constructor(...args) {
