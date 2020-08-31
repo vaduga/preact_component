@@ -1,12 +1,12 @@
 // import { html, render, Component } from 'https://unpkg.com/htm/preact/index.mjs?module'
-//yarn build
+//yarn build 
 import { render, Component } from 'preact';
 
 import { html } from 'htm/react';
 
 import Person from './components/person.js';
 
-console.log('Привет, Мир!');
+console.log('Привет, Мир!!');
 
 class App extends Component {
 	state = {
