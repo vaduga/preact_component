@@ -10,10 +10,11 @@
     "gh-pages": "^3.1.0",
     "htm": "^3.0.4",
     "parcel": "^2.0.0-beta.1",
-    "preact": "^10.4.8",
     "sass": "^1.26.10"
   },
-  "dependencies": {},
+  "dependencies": {
+    "preact": "^10.4.8"
+  },
   "scripts": {
     "start": "parcel serve --no-cache ./src/index.html --dist-dir=dist",
     "build": "parcel build --no-cache ./src/index.html --dist-dir=build --public-url ./",
